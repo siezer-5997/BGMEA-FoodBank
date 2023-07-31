@@ -13,10 +13,10 @@ router.get("/auth/signup", middleware.ensureNotLoggedIn, (req,res) => {
 
 router.post("/auth/signup", middleware.ensureNotLoggedIn, async (req,res) => {
 	
-	const { firstName, lastName, email, password1, password2, role } = req.body;
+	const { firstName, lastName, email, city, password1, password2, role } = req.body;
 	let errors = [];
 	
-	if (!firstName || !lastName || !email || !password1 || !password2) {
+	if (!firstName || !lastName || !city|| !email || !password1 || !password2) {
 		errors.push({ msg: "Please fill in all the fields" });
 	}
 	if (password1 != password2) {
@@ -44,7 +44,7 @@ router.post("/auth/signup", middleware.ensureNotLoggedIn, async (req,res) => {
 			});
 		}
 		
-		const newUser = new User({ firstName, lastName, email, password:password1, role });
+		const newUser = new User({ firstName, lastName, email, password:password1, city, role });
 		const salt = bcrypt.genSaltSync(10);
 		const hash = bcrypt.hashSync(newUser.password, salt);
 		newUser.password = hash;

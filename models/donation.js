@@ -18,11 +18,15 @@ const donationSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	cookingTime: {
+	expiryDate: {
 		type: Date,
 		required: true
 	},
 	address: {
+		type: String,
+		required: true
+	},
+	city: {
 		type: String,
 		required: true
 	},

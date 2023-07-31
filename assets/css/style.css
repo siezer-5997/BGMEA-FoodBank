@@ -2,7 +2,7 @@
 
 :root
 {
-	--theme-color: #3f51b5;
+	--theme-color: #000000;
 }
 
 body
@@ -17,7 +17,7 @@ body
 header
 {
 	background-color: var(--theme-color);
-	height: 50px;
+	height: 10vh;
 	font-weight: 500;
 }
 header .nav-link

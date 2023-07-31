@@ -21,6 +21,7 @@
 			<input type="text" name="lastName" class="form-control" id="last-name" placeholder="Enter last name.." value="<%= typeof lastName != 'undefined' ? lastName : '' %>" required>
 		</div>
 		
+		
 		<div class="mb-3">
 			<label for="email" class="form-label">Email address</label>
 			<input type="email" name="email" class="form-control" id="email" placeholder="Enter email.." value="<%= typeof email != 'undefined' ? email : '' %>" required>
@@ -37,15 +38,34 @@
 			<input type="password" name="password2" class="form-control" id="password2" placeholder="Re-enter password.." value="<%= typeof password2 != 'undefined' ? password2 : '' %>" required>
 		</div>
 		
+
+		<div class="mb-3">
+			<label for="city" class="form-label">City</label>
+			<select class="form-select" name="city" id="city">
+			  <option value="abudhabi">Abu Dhabi</option>
+			  <option value="dubai">Dubai</option>
+			  <option value="sharjah">Sharjah</option>
+			  <option value="alain">Al Ain</option>
+			  <option value="ajman">Ajman</option>
+			  <option value="rasalkhaimah">Ras Al Khaimah</option>
+			  <option value="fujairah">Fujairah</option>
+			  <option value="umm-al-quwain">Umm Al Quwain</option>
+			  <!-- Add more cities here if needed -->
+			</select>
+		  </div>
+		 
+
 		<div class="mb-3">
 			<label for="role" class="form-label">Signup as</label>
 			<select class="form-select" name="role" id="role">
 				<option value="donor">Donor</option>
 				<option value="agent">Agent</option>
-				<option value="admin">Admin</option>
+				<!-- <option value="admin">Admin</option> -->
 			</select>
 		</div>
 		
+
+
 		<button type="submit" class="btn d-block m-auto mt-4">Submit</button>
 		
 		

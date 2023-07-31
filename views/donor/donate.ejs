@@ -20,16 +20,32 @@
 				</div>
 				
 				<div class="mb-4 col-sm-6">
-					<label for="time" class="form-label">Time of cooking</label>
-					<input type="datetime-local" name="donation[cookingTime]" class="form-date-input" id="time" required>
+					<label for="time" class="form-label">Expiry Date</label>
+					<input type="date" name="donation[expiryDate]" class="form-date-input" id="expirytime" required>
 				</div>
 			</div>
-			
-			<div class="row">
-				<div class="mb-4 col-sm-8">
-					<label for="address" class="form-label">Address to collect</label>
-					<input type="text" name="donation[address]" class="form-control" id="address" placeholder="Enter address.." value="<%= currentUser.address %>" required>
-				</div>
+				
+				<div class="row">
+					<div class="mb-4 col-sm-8">
+						<label for="city" class="form-label">City</label>
+						<select class="form-select" name="role" id="role">
+							<option value="abudhabi">Abu Dhabi</option>
+							<option value="dubai">Dubai</option>
+							<option value="sharjah">Sharjah</option>
+							<option value="alain">Al Ain</option>
+							<option value="ajman">Ajman</option>
+							<option value="rasalkhaimah">Ras Al Khaimah</option>
+							<option value="fujairah">Fujairah</option>
+							<option value="umm-al-quwain">Umm Al Quwain</option>
+							<!-- Add more cities here if needed -->
+						  </select>
+					</div>
+
+					<div class="row">
+						<div class="mb-4 col-sm-8">
+							<label for="address" class="form-label">Address to collect</label>
+							<input type="text" name="donation[address]" class="form-control" id="address" placeholder="Enter address.." value="<%= currentUser.address %>" required>
+						</div>
 				
 				<div class="mb-4 col-sm-4">
 					<label for="phone" class="form-label">Phone</label>

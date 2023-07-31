@@ -11,7 +11,7 @@ const adminRoutes = require("./routes/admin.js");
 const donorRoutes = require("./routes/donor.js");
 const agentRoutes = require("./routes/agent.js");
 require("dotenv").config();
-require("./config/dbConnection.js")();
+// require("./config/dbConnection.js")();
 require("./config/passport.js")(passport);
 
 
