@@ -2,7 +2,7 @@
 
 :root
 {
-	--theme-color: #000000;
+	--theme-color: #ffffff;
 }
 
 body
@@ -18,11 +18,13 @@ header
 {
 	background-color: var(--theme-color);
 	height: 10vh;
+	left: 3vw;
 	font-weight: 500;
 }
 header .nav-link
 {
-	color: white !important;
+	color: rgb(0, 0, 0) !important;
+	
 }
 header #navbarSupportedContent
 {
@@ -31,7 +33,7 @@ header #navbarSupportedContent
 header .nav-link:hover
 {
 	transition: 0.3s;
-	color: #ddd1d1 !important;
+	color: #e72929 !important;
 }
 header .user-icon
 {

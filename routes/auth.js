@@ -25,10 +25,11 @@ router.post("/auth/signup", middleware.ensureNotLoggedIn, async (req,res) => {
 	if (password1.length < 4) {
 		errors.push({ msg: "Password length should be atleast 4 characters" });
 	}
+	
 	if(errors.length > 0) {
 		return res.render("auth/signup", {
 			title: "User Signup",
-			errors, firstName, lastName, email, password1, password2
+			errors, firstName, lastName, email, password1, password2, city
 		});
 	}
 	
@@ -40,7 +41,7 @@ router.post("/auth/signup", middleware.ensureNotLoggedIn, async (req,res) => {
 			errors.push({msg: "This Email is already registered. Please try another email."});
 			return res.render("auth/signup", {
 				title: "User Signup",
-				firstName, lastName, errors, email, password1, password2
+				firstName, lastName, errors, email, password1, password2,city
 			});
 		}
 		
