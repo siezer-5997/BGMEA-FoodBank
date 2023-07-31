@@ -71,7 +71,7 @@ header .navbar-toggler:focus
 {
 	padding: 6px 15px;
 	font-size: 18px;
-	color: white;
+	color: rgb(0, 0, 0);
 	background-color: var(--theme-color);
 	border-radius: 0px;
 }
@@ -82,7 +82,7 @@ header .navbar-toggler:focus
 .btn:hover
 {
 	box-shadow: 3px 4px 6px 0px grey;
-	color: white;
+	color: rgb(255, 4, 4);
 }
 
 #carousel img
