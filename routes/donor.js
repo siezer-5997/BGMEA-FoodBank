@@ -92,7 +92,7 @@ router.put("/donor/profile", middleware.ensureDonorLoggedIn, async (req,res) => 
 	{
 		const id = req.user._id;
 		const updateObj = req.body.donor;	// updateObj: {firstName, lastName, gender, address, phone}
-		await User.findByIdAndUpdate(id, updateObj);
+		await User.findByIdAndUpdate(id).then(updateObj);
 		
 		req.flash("success", "Profile updated successfully");
 		res.redirect("/donor/profile");

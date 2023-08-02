@@ -63,7 +63,7 @@ router.post("/auth/signup", middleware.ensureNotLoggedIn, async (req,res) => {
 });
 
 router.get("/auth/login", middleware.ensureNotLoggedIn, (req,res) => {
-	res.render("auth/login", { title: "User login" });
+	res.render("/auth/login", { title: "User login" });
 });
 
 router.post("/auth/login", middleware.ensureNotLoggedIn,

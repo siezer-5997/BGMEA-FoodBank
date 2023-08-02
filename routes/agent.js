@@ -46,7 +46,7 @@ router.get("/agent/collection/view/:collectionId", middleware.ensureAgentLoggedI
 	try
 	{
 		const collectionId = req.params.collectionId;
-		const collection = await Donation.findById(collectionId).populate("donor");
+		const collection = await Donation.findById(collectionId).then().populate("donor");
 		res.render("agent/collection", { title: "Collection details", collection });
 	}
 	catch(err)
@@ -61,7 +61,7 @@ router.get("/agent/collection/collect/:collectionId", middleware.ensureAgentLogg
 	try
 	{
 		const collectionId = req.params.collectionId;
-		await Donation.findByIdAndUpdate(collectionId, { status: "collected", collectionTime: Date.now() });
+		await Donation.findByIdAndUpdate(collectionId).then({ status: "collected", collectionTime: Date.now() });
 		req.flash("success", "Donation collected successfully");
 		res.redirect(`/agent/collection/view/${collectionId}`);
 	}
@@ -84,7 +84,7 @@ router.put("/agent/profile", middleware.ensureAgentLoggedIn, async (req,res) => 
 	{
 		const id = req.user._id;
 		const updateObj = req.body.agent;	// updateObj: {firstName, lastName, gender, address, phone}
-		await User.findByIdAndUpdate(id, updateObj);
+		await User.findByIdAndUpdate(id).then(updateObj);
 		
 		req.flash("success", "Profile updated successfully");
 		res.redirect("/agent/profile");
