@@ -46,7 +46,7 @@ router.get("/agent/collection/view/:collectionId", middleware.ensureAgentLoggedI
 	try
 	{
 		const collectionId = req.params.collectionId;
-		const collection = await Donation.findById(collectionId).then().populate("donor");
+		const collection = await Donation.findById(collectionId).populate("donor");
 		res.render("agent/collection", { title: "Collection details", collection });
 	}
 	catch(err)
