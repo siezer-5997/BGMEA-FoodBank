@@ -10,7 +10,7 @@ phases:
   
   build:
     commands:
-      - npm start # Run any build scripts or tasks
+      - npm run dev # Run any build scripts or tasks
       # Add other commands for testing, linting, etc.
 
   # post_build:
