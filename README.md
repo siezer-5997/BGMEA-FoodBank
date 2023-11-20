@@ -81,6 +81,12 @@ For running the application:
 
 ## Installation and Setup
 
+0. Remove the cached package-lock.json file and node-modules/ folder
+```sh
+rm -rf node-modules/
+rm -f package-loke.json 
+```
+
 1. Install all the dependencies
    ```sh
    npm install
