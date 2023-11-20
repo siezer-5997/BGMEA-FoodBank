@@ -6,10 +6,8 @@ phases:
       - echo removing node_modules
       - rm -rf node_modules
       - rm -f package-lock.json
-  install:
-    commands:
       - npm install # Install project dependencies
-
+  
   build:
     commands:
       - npm start # Run any build scripts or tasks
