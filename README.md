@@ -84,7 +84,7 @@ For running the application:
 0. Remove the cached package-lock.json file and node-modules/ folder
 ```sh
 rm -rf node-modules/
-rm -f package-loke.json 
+rm -f package-lock.json 
 ```
 
 1. Install all the dependencies
