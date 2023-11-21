@@ -4,6 +4,8 @@
   "description": "A Food donation management system in which donors can donate the food and this food can be fed to the poor people",
   "main": "app.js",
   "scripts": {
+    "build": "npm run lint",
+    "lint": "eslint .",
     "start": "node app.js --port 8080",
     "dev": "nodemon app.js -e html,css,js,ejs"
   },
@@ -28,6 +30,8 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "eslint": "^8.54.0",
     "nodemon": "^2.0.15"
   }
 }

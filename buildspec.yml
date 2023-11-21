@@ -7,16 +7,4 @@ phases:
       - npm install  # Install dependencies
   build:
     commands:
-      - npm run dev  # Build your Node.js application (if required)
-  post_build:
-    commands:
-      - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-      - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-      - aws configure set default.region $AWS_REGION
-      - aws elasticbeanstalk create-application-version --application-name YourAppName --version-label $CODEBUILD_BUILD_NUMBER --source-bundle S3Bucket=$CODEBUILD_S3_BUCKET,S3Key=$CODEBUILD_S3_KEY
-      - aws elasticbeanstalk update-environment --application-name YourAppName --environment-name YourEnvironmentName --version-label $CODEBUILD_BUILD_NUMBER
-
-artifacts:
-  files:
-    - '**/*'  # Include all files in the build artifact
-  discard-paths: yes
+      - npm run build  # Build your Node.js application (if required)
