@@ -1,19 +1,26 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      nodejs: 14  # Change Node.js version as needed
   pre_build:
     commands:
-      - echo removing node_modules
-      - rm -rf node_modules
+      - rm -rf node_modules  # Clean up node_modules
       - rm -f package-lock.json
-      - npm install # Install project dependencies
-  
+      - npm install  # Install dependencies
   build:
     commands:
-      - npm run dev # Run any build scripts or tasks
-      # Add other commands for testing, linting, etc.
+      - npm run dev  # Build your Node.js application (if required)
+  post_build:
+    commands:
+      - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+      - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+      - aws configure set default.region $AWS_REGION
+      - aws elasticbeanstalk create-application-version --application-name YourAppName --version-label $CODEBUILD_BUILD_NUMBER --source-bundle S3Bucket=$CODEBUILD_S3_BUCKET,S3Key=$CODEBUILD_S3_KEY
+      - aws elasticbeanstalk update-environment --application-name YourAppName --environment-name YourEnvironmentName --version-label $CODEBUILD_BUILD_NUMBER
 
-  # post_build:
-  #   commands:
-  #     - npm run deploy # Command to deploy your Node.js application after build
-  #     # Additional post-build commands
+artifacts:
+  files:
+    - '**/*'  # Include all files in the build artifact
+  discard-paths: yes

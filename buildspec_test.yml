@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo removing node_modules
+      - rm -rf node_modules
+      - rm -f package-lock.json
+      - npm install # Install project dependencies
+  
+  build:
+    commands:
+      - npm run dev # Run any build scripts or tasks
+      # Add other commands for testing, linting, etc.
+  
+  
+
+  # post_build:
+  #   commands:
+  #     - npm run deploy # Command to deploy your Node.js application after build
+  #     # Additional post-build commands
