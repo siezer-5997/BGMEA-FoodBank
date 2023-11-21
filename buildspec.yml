@@ -2,9 +2,6 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 14  # Change Node.js version as needed
-  pre_build:
     commands:
       - rm -rf node_modules  # Clean up node_modules
       - rm -f package-lock.json
